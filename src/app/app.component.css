@@ -1,0 +1,16 @@
+.one {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.two {
+    padding: 15px;
+}
+.two:hover {
+    background-color: rgb(40, 39, 39);
+}
+.active {
+    background-color: rgb(40, 39, 39);
+}
