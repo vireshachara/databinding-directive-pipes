@@ -38,12 +38,15 @@
                 <td> {{contact.placeOfBirth}} </td>
             </tr>
         </table>
+        <p>{{'Server'}} with ID {{ serverId }} is {{ getServerStatus() }}</p>
 
         <h2 class="c6">Property Binding</h2>
-
+        <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button><br>
+        <p>{{allowNewServer}}</p>
+        <p [innerText]="allowNewServer"></p>     
         <div [innerHTML]="user_object.first_name"></div>
         <div [innerHTML]="text"></div>
-        <p [hidden]="isShow" [title]="text1">Veeresh and Kavya</p>
+        <p [hidden]="isShow" [title]="text1">Veeresh</p>
         <img [src]="source" width="200" height="150"><br><br>
         <!-- Diffrence between property and string interpolation -->
         <div>
@@ -68,7 +71,9 @@
 
         <h1 *ngIf="showMassage">Hello </h1>
 
-        <button (click)="sayHello()">Click to say Hello</button>
+        <button (click)="sayHello()">Click to say Hello</button><br><br>
+        <button (click)="onCreateServer()" class="btn btn-primary" >Change Server</button>
+        <p>{{serverCreationStatus}}</p>
 
         <div (mouseover)="highlightBgColor()">Click to say Hello</div>
         <input type="text" (focus)="focusOn()" />
@@ -89,7 +94,7 @@
         <h3><u>Sending Data from HTML to Typescript(On console)</u> </h3>
 
         <input type="text" [(ngModel)]="user1" />
-        <p class="error" *ngIf="errormassage">The user does not exist</p><br><br>
+        <p class="error" *ngIf="errorMassage">The user does not exist</p><br><br>
         <button (click)="getUser1($event)">Click</button><br>
         
     </div>
